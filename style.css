@@ -1,0 +1,199 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #797979;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px;
+    margin-top: 20px;
+}
+
+h1, h2 {
+    color: #8e0404;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.add-material {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-material select,
+.add-material input[type="number"] {
+    flex: 1;
+    min-width: 180px; /* Ajustado para acomodar o select */
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background-color: #fff; /* Garante fundo branco para o select */
+}
+
+.add-material select:focus,
+.add-material input[type="number"]:focus {
+    border-color: #9d0000;
+    outline: none;
+}
+
+.add-material button {
+    padding: 12px 25px;
+    background-color: #800000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    flex-shrink: 0; /* Prevents button from shrinking */
+}
+
+.add-material button:hover {
+    background-color: #770000;
+    transform: translateY(-2px);
+}
+
+.inventory-list {
+    margin-top: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    border: 1px solid #eee;
+    text-align: left;
+    vertical-align: middle;
+}
+
+table th {
+    background-color: #8c0000;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+table tr:hover {
+    background-color: #e2f0ff;
+}
+
+.status-ok {
+    color: #28a745; /* Green */
+    font-weight: bold;
+}
+
+.status-reorder {
+    color: #dc3545; /* Red */
+    font-weight: bold;
+}
+
+.action-btn {
+    padding: 8px 12px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background-color 0.3s ease;
+}
+
+.action-btn.delete {
+    background-color: #dc3545;
+    color: white;
+}
+
+.action-btn.delete:hover {
+    background-color: #c82333;
+}
+
+.action-btn.edit {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.action-btn.edit:hover {
+    background-color: #e0a800;
+}
+
+@media (max-width: 768px) {
+    .add-material {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .add-material select,
+    .add-material input {
+        width: auto;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        border: 1px solid #eee;
+        margin-bottom: 10px;
+    }
+
+    td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+    }
+
+    td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    td:nth-of-type(1):before { content: "Material"; }
+    td:nth-of-type(2):before { content: "Quantidade Atual"; }
+    td:nth-of-type(3):before { content: "Estoque Mínimo"; }
+    td:nth-of-type(4):before { content: "Status"; }
+    td:nth-of-type(5):before { content: "Ações"; }
+
+    .action-btn {
+        width: 100%;
+        margin-top: 5px;
+    }
+}
