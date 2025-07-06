@@ -3,7 +3,7 @@
     "short_name": "Estoque",
     "description": "Um aplicativo para gerenciar seu estoque de produtos.",
     "start_url": "./index.html",
-    "display": "fullscreen",
+    "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#b30a00",
     "icons": [
